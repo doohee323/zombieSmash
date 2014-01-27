@@ -8,11 +8,12 @@ var config = {
 	server: 'spring' // spring, rails
 };
 
-var app = angular.module('sheepwebApp',
+var app = angular.module('fBFriends',
 		[ 'ngCookies',
           'ngResource',
           'ngSanitize',
           'ui.router',
+          'ngDialog',
           'ui.bootstrap'])
 
 app.constant('config', config)
