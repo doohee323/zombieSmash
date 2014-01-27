@@ -1,7 +1,6 @@
 <div class="header">
 	<ul class="nav nav-pills pull-right">
 	</ul>
-	<h3 class="text-muted">PBF angular.js</h3>
 </div>
 
 <div class="panel panel-default">
@@ -17,9 +16,6 @@
 <div id="fb-root"></div>
 <script
 	src="http://connect.facebook.net/en_US/all.js#appId=229823833732087&amp;xfbml=1"></script>
-<fb:login-button autologoutlink="true"
-	scope="email,publish_stream,offline_access,friends_birthday,friends_location,friends_photos,friends_about_me,read_friendlists,read_friendlists,friends_hometown,user_location,user_hometown,user_website,user_birthday,user_groups,friends_groups,user_online_presence"
-	size="large"></fb:login-button>
 <script>
 	var once = false;
 	window.fbAsyncInit = function() {
@@ -140,31 +136,48 @@
 </script>
 
 <div align="center">
-	<h2>Facebook OAuth Javascript Demo</h2>
+	<h2>Facebook friends' last name quiz</h2>
+
+	<div> 1. Push the facebook button.<br>
+		  2. Select one of them.
+	</div> 
+
+	<fb:login-button autologoutlink="true"
+	scope="email,publish_stream,offline_access,friends_birthday,friends_location,friends_photos,friends_about_me,read_friendlists,read_friendlists,friends_hometown,user_location,user_hometown,user_website,user_birthday,user_groups,friends_groups,user_online_presence"
+	size="large"></fb:login-button><br>
 
 	<div id="friendslist"></div>
 	
 	<div ng-controller="MainCtrl">
+
 		<div ng-click="openTemplate()"> 
-			Guess this friend's last name!<br>
+			<br>
+			3. Guess this friend's last name! <br>Click the picture. <br>
 			<img src='' id='queryImg'><br>
 			<input type="text" id="queryFirst" ng-model="queryFirst"/><br>
-			<input type="text" id="queryLast" ng-model="queryLast"/><br>
+			<input type="hidden" id="queryLast" ng-model="queryLast"/><br>
 		</div>
+		<div ng-click="showResult()"> 
+			<br>
+			<code>4. Retrieve the result.</code><br>
+			<div ng-model="resultView"></div> 
+		</div>
+
+		<ul class="example-animate-container">
+	        <li class="animate-repeat" ng-repeat="eachResult in resultView">
+	          {{$index + 1}} | {{eachResult.winning}} | {{eachResult.perc}}
+	        </li>
+		</ul>
+
 	</div>
 	
-	<div id="status">
-		<!-- 		Click on Below Image to start the demo: <br /> <img -->
-		<!-- 			src="http://hayageek.com/examples/oauth/facebook/oauth-javascript/LoginWithFacebook.png" -->
-		<!-- 			style="cursor: pointer;" onclick="Login()" /> -->
-	</div>
-
 	<div id="message">
+		<br>
 		Logs:<br />
 	</div>
 
 </div>
 
 <div class="footer">
-	<p>from the topzone2013 team</p>
+	<p>It took 3 hours.</p>
 </div>
