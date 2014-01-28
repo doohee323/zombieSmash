@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.tz.common</groupId>
-	<artifactId>fBFriends</artifactId>
+	<artifactId>zombieSmash</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>fBFriends Webapp</name>
+	<name>zombieSmash Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -293,7 +293,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>fBFriends</finalName>
+		<finalName>zombieSmash</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

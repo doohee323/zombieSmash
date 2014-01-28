@@ -8,7 +8,7 @@ var config = {
 	server: 'spring' // spring, rails
 };
 
-var app = angular.module('fBFriends',
+var app = angular.module('zombieSmash',
 		[ 'ngCookies',
           'ngResource',
           'ngSanitize',

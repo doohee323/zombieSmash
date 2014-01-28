@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fBFriends').controller('MainCtrl', function($scope, ngDialog) {
+angular.module('zombieSmash').controller('MainCtrl', function($scope, ngDialog) {
 
 	var MaxCnt = 6;
 	var turnCnt = 0;
