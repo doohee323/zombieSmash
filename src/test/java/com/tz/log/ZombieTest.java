@@ -24,7 +24,7 @@ public class ZombieTest extends TestSupport {
 			.getLogger(ZombieTest.class);
 
 	@Test
-	public void mongoTest() {
+	public void runtTest() {
 		SmashService service = new SmashService();
 		service.smashZombie();
 	}
