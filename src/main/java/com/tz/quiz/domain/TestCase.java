@@ -29,6 +29,7 @@ public class TestCase {
 
 	public void addZombie(Zombie zombie) {
 		this.zombies[this.zombies.length] = zombie;
+		this.Z++;
 	}
 
 	public Zombie getZombie(int index) {
