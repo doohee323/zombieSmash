@@ -1,10 +1,12 @@
 package com.tz.quiz.domain;
 
+import com.tz.quiz.support.Constants;
+
 public class TestCase {
 
 	private int T; 	// testcase count
     private int Z;	// zombie count
-    private Zombie[] zombies;
+    private Zombie[] zombies = new Zombie[Constants.zombieMaxCnt];
     
 	public int getT() {
 		return T;
@@ -18,17 +20,9 @@ public class TestCase {
 	public void setZ(int z) {
 		Z = z;
 	}
-	
-	public Zombie[] getZombies() {
-		return zombies;
-	}
-	
-	public void setZombies(Zombie[] zombies) {
-		this.zombies = zombies;
-	}
 
 	public void addZombie(Zombie zombie) {
-		this.zombies[this.zombies.length] = zombie;
+		this.zombies[Z] = zombie;
 		this.Z++;
 	}
 

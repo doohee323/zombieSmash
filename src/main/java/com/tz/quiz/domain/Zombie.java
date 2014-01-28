@@ -7,6 +7,7 @@ public class Zombie {
 	private int X; // location X
 	private int Y; // location Y
 	private int M; // time to show
+	private boolean smashedYn = false; // 
 	private boolean showYn; // currently show or not
 	private int showTime = Constants.zombieShow; // left show time
 
@@ -58,5 +59,13 @@ public class Zombie {
 			if (this.showTime < 0)
 				this.showTime = Constants.zombieShow; // ?? re-show
 		}
+	}
+
+	public boolean isSmashedYn() {
+		return smashedYn;
+	}
+
+	public void setSmashedYn(boolean smashedYn) {
+		this.smashedYn = smashedYn;
 	}
 }
