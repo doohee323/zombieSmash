@@ -9,6 +9,7 @@ public class Zombie {
 	private int M; // time to show
 	private boolean smashedYn = false; // 
 	private boolean showYn; // currently show or not
+	private boolean finished; // no chance to smash
 	private int showTime = Constants.zombieShow; // left show time
 
 	public Zombie(int x, int y, int m) {
@@ -54,10 +55,11 @@ public class Zombie {
 	}
 
 	public void setShowTime() {
-		if (this.showYn) {
+		if (this.showYn && !this.smashedYn) {
+			if (this.showTime < 0) {
+				this.finished = true;
+			}
 			this.showTime--;
-			if (this.showTime < 0)
-				this.showTime = Constants.zombieShow; // ?? re-show
 		}
 	}
 
@@ -67,5 +69,14 @@ public class Zombie {
 
 	public void setSmashedYn(boolean smashedYn) {
 		this.smashedYn = smashedYn;
+		this.finished = true;
+	}
+
+	public boolean isFinished() {
+		return finished;
+	}
+
+	public void setFinished(boolean finished) {
+		this.finished = finished;
 	}
 }
